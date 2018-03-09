@@ -1,14 +1,18 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-    devtool: "inline-source-map",
+    devtool: "source-map",
     entry: ['./app/index.js'],
     output: {
         path: path.join(__dirname, 'build'),
         filename: "bundle.js"
     },
+    plugins: [
+        new UglifyJSPlugin()
+    ],
     module: {
         rules: [
             {
@@ -30,7 +34,7 @@ module.exports = {
         })
     ],
     node: {
-        fs: 'empty',
-        net: 'empty'
-    }
+  		fs: 'empty',
+  		net: 'empty'
+	}
 };
