@@ -28,9 +28,10 @@ module.exports = {
             filename:'index.html',
             inject:'body'
         })
-    ],
-    node: {
-        fs: 'empty',
-        net: 'empty'
-    }
+    ]
+    // ,
+    // node: {
+    //     fs: 'empty',
+    //     net: 'empty'
+    // }
 };
