@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-    devtool: "source-map",
+    devtool: "inline-source-map",
     entry: ['./app/index.js'],
     output: {
         path: path.join(__dirname, 'build'),

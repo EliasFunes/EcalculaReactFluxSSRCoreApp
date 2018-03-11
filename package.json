@@ -4,19 +4,20 @@
   "description": "Ecalcula Core App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:server": "babel ./app/server -d build/server",
-    "build:watch:server": "babel ./app/server -d build/server --watch",
-    "build:client": "webpack --mode production --config ./webpack.prod.config.js/",
+    "build:watch" : "babel ./app -d build --watch",
     "build:watch:client": "webpack --mode development --config ./webpack.config.js/ --watch",
-    "start:dev": "parallelshell \"npm run build:watch:server\" \"npm run build:watch:client\" \"nodemon ./build/server/index.js\"",
-    "start:dev:client": "webpack-dev-server",
-    "build:prod": "npm run build:server && npm run build:client",
+    "start:dev": "parallelshell \"npm run build:watch\" \"npm run build:watch:client\" \"nodemon ./build/server/index.js\"",
+
+    "build": "babel ./app -d build",
+    "build:client": "webpack --mode production --config ./webpack.prod.config.js/",
+    "build:prod": "npm run build && npm run build:client",
     "start": "npm run build:prod && node ./build/server/index.js"
   },
   "author": "Elias Funes",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

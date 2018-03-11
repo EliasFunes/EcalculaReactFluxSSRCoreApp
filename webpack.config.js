@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devtool: "inline-source-map",
+    devtool: "source-map",
     entry: ['./app/index.js'],
     output: {
         path: path.join(__dirname, 'build'),
